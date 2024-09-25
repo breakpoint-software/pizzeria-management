@@ -1,4 +1,4 @@
-Demo application created to manage the pizzeria orders
+Demo RESTful API created to manage the pizzeria orders
 
 Tech specification
 * .Net core 8 - dependecy injection
