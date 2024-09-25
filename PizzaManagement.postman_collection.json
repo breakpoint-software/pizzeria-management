@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "1b32df9b-5f59-41c0-b86f-40dff617e294",
+		"name": "PizzaManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9396318",
+		"_collection_link": "https://warped-water-185679.postman.co/workspace/New-Team-Workspace~cf909f86-66b7-4e10-988e-88e810773955/collection/9396318-1b32df9b-5f59-41c0-b86f-40dff617e294?action=share&source=collection_link&creator=9396318"
+	},
+	"item": [
+		{
+			"name": "PlaceOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"customerId\": 1,\r\n  \"OrderDetails\": [\r\n    {\r\n      \"pizzaId\": 3,\r\n      \"name\": \"\",\r\n        \"quantity\": 3\r\n    },\r\n    {\r\n      \"pizzaId\": 4,\r\n      \r\n        \"quantity\": 3\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7241/api/orders",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7241",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Next",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7241/api/orders/next",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7241",
+					"path": [
+						"api",
+						"orders",
+						"next"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Pizzas\": [\r\n        { \"Id\": 1}\r\n    ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7241/api/orders/14/complete",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7241",
+					"path": [
+						"api",
+						"orders",
+						"14",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Manu",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Pizzas\": [\r\n        { \"Id\": 1}\r\n    ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7241/api/menu",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7241",
+					"path": [
+						"api",
+						"menu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
