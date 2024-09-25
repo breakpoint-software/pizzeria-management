@@ -5,9 +5,9 @@ Tech specification
 * EntityFramworkCore for MySql db.
 
 Architecture of the solution
-* API - endpoint required 
+* API - endpoints 
 * Services - logic of the app 
-* Model - Data models, DTOs, Profilers and dbContext
+* Model - Data models, DTOs, Profiles and dbContext
 
 
 Helpers 
