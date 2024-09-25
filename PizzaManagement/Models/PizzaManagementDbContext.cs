@@ -7,9 +7,14 @@ namespace Models
 
     public class PizzaManagementDbContext : DbContext
     {
-        public DbSet<Pizza> Pizzas { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Pizza> Pizzas { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
+        public PizzaManagementDbContext()
+        {
+
+        }
         public PizzaManagementDbContext(DbContextOptions options) : base(options)
         {
 
