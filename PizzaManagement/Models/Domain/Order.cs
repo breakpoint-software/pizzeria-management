@@ -14,7 +14,6 @@ namespace Models.Domain
         public decimal TotalPrice { get; set; }
         public OrderStatus OrderStatus { get; set; }
         public DateTime CreatedDate { get; set; }
-
     }
 
 

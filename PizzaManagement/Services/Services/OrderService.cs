@@ -15,7 +15,7 @@ namespace Services.Services
             this.mapper = mapper;
         }
 
-        public async Task<OrderResponse> PlaceOrder(OrderRequest order)
+        public async Task<OrderPlacedResponse> PlaceOrder(OrderRequest order)
         {
             if (order.OrderDetails.Count == 0)
                 throw new ArgumentException("Send at least one pizza");
@@ -37,13 +37,16 @@ namespace Services.Services
                 e.Price = e.Quantity * pizza.Price;
                 e.CreatedDate = DateTime.Now;
 
-                order.TotalPrice += e.Quantity * pizza.Price;
+                newOrder.TotalPrice += e.Quantity * pizza.Price;
             });
 
             _context.Orders.Add(newOrder);
             await _context.SaveChangesAsync();
 
-            return mapper.Map<OrderResponse>(newOrder);
+            var response = mapper.Map<OrderPlacedResponse>(newOrder);
+            response.PendingOrders = _context.Orders.Where(e => e.OrderStatus == OrderStatus.Pending).Count();
+
+            return response;
         }
 
         public async Task<OrderResponse> GetNextOrder()

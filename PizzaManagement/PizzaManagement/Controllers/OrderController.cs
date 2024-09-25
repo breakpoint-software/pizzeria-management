@@ -21,11 +21,7 @@ namespace PizzaManagement.Controllers
             try
             {
                 var order = await _orderService.PlaceOrder(request);
-                return Ok(new
-                {
-                    OrderId = order.Id,
-                    Message = "Order created successfully",
-                });
+                return Ok(order);
             }
             catch (Exception ex)
             {

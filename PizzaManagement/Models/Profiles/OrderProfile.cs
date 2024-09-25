@@ -9,6 +9,7 @@ namespace ChicksGold.Server.Models.Profiles
         {
             CreateMap<OrderRequest, Order>().ReverseMap();
             CreateMap<OrderResponse, Order>().ReverseMap();
+            CreateMap<OrderPlacedResponse, Order>().ReverseMap();
             CreateMap<OrderDetailResponse, OrderDetail>().ReverseMap().ForMember(src => src.Pizza, opt => opt.MapFrom(e => e.Pizza.Name));
             CreateMap<OrderDetailRequest, OrderDetail>().ReverseMap();
         }

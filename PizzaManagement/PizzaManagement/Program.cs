@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PizzaManagementDbContext>(options =>
 {
-    var connectionString = "server=localhost;port=3306;database=pizzeria-management;user=root;password=root";//builder.Configuration.DbConnectionString();
+    var connectionString = "server=localhost;port=3306;database=pizzeria-management;user=root;password=root";
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 

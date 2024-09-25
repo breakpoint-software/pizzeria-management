@@ -3,8 +3,17 @@
     public class OrderResponse
     {
         public int Id { get; set; }
+        public decimal TotalPrice { get; set; }
         public List<OrderDetailResponse> OrderDetails { get; set; }
     }
+
+    public class OrderPlacedResponse
+    {
+        public int Id { get; set; }
+        public decimal TotalPrice { get; set; }
+        public int PendingOrders { get; set; }
+    }
+
     public class OrderDetailResponse
     {
 
